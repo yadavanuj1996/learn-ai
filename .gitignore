@@ -55,3 +55,4 @@ langchain.log
 # ----------------------------
 docs/youtube/
 outputs/
+**/docs/
