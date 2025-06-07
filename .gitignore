@@ -1,0 +1,57 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# ----------------------------
+# Virtual Environments
+# ----------------------------
+env/
+venv/
+.venv/
+**/backend-ve/
+
+# ----------------------------
+# Environment Variables
+# ----------------------------
+.env
+.env.*
+
+# ----------------------------
+# VSCode / PyCharm / IDEs
+# ----------------------------
+.vscode/
+.idea/
+
+# ----------------------------
+# Jupyter Notebook
+# ----------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ----------------------------
+# OS / Misc
+# ----------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# LangChain Cache / Logs
+# ----------------------------
+.cache/
+langchain.log
+
+# ----------------------------
+# Local Data / Outputs
+# ----------------------------
+docs/youtube/
+outputs/
