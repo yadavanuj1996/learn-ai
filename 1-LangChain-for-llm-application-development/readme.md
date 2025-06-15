@@ -18,6 +18,15 @@ It's an approach used in AI systems—especially with LLMs (Large Language Model
 
 
 
+### Failure Modes:
+1. Duplicate data in multiple documents
+    - Le's say if we input two same documents in input, so after splitting and embedding it gets stored in vector db.
+    - Once we retrieve a relevant document by similarity of the vector embeddings between input query and stored document splits
+    - If there are duplicate input documents same content will be pulled back, ideally we would want syntactically closer and distinct document splits (so that we can pass it to LLM)
+2. Equal weightage to whole sentence
+    - Let's say we input a search query (Get me details about regression from document 3), this will focus equally on regression and document 3 thus this query will return documents containing info related to regression even if they are on documents other than document 3.
+    
+
 
 # setup
 

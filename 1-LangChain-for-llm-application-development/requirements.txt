@@ -6,3 +6,4 @@ notebook
 langchain-community
 yt_dlp
 pydub
+tiktoken
