@@ -18,6 +18,13 @@ It's an approach used in AI systems—especially with LLMs (Large Language Model
 
 
 
+
+
+<img width="723" alt="Screenshot 2025-06-15 at 12 31 56 PM" src="https://github.com/user-attachments/assets/448fa6d8-d794-4787-b856-b95d7a1be6d4" />
+<img width="723" alt="Screenshot 2025-06-15 at 12 32 22 PM" src="https://github.com/user-attachments/assets/1b10a775-7bcd-4082-b7b0-85ea5e1224d7" />
+<img width="723" alt="Screenshot 2025-06-15 at 12 32 51 PM" src="https://github.com/user-attachments/assets/0ea5b808-5668-4125-974a-436a4cdf3b20" />
+
+
 ### Failure Modes:
 1. Duplicate data in multiple documents
     - Le's say if we input two same documents in input, so after splitting and embedding it gets stored in vector db.
@@ -25,7 +32,6 @@ It's an approach used in AI systems—especially with LLMs (Large Language Model
     - If there are duplicate input documents same content will be pulled back, ideally we would want syntactically closer and distinct document splits (so that we can pass it to LLM)
 2. Equal weightage to whole sentence
     - Let's say we input a search query (Get me details about regression from document 3), this will focus equally on regression and document 3 thus this query will return documents containing info related to regression even if they are on documents other than document 3.
-    
 
 
 # setup
