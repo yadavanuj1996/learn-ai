@@ -18,12 +18,11 @@ It's an approach used in AI systems—especially with LLMs (Large Language Model
 
 
 
-
-
 <img width="723" alt="Screenshot 2025-06-15 at 12 31 56 PM" src="https://github.com/user-attachments/assets/448fa6d8-d794-4787-b856-b95d7a1be6d4" />
 <img width="723" alt="Screenshot 2025-06-15 at 12 32 22 PM" src="https://github.com/user-attachments/assets/1b10a775-7bcd-4082-b7b0-85ea5e1224d7" />
 <img width="723" alt="Screenshot 2025-06-15 at 12 32 51 PM" src="https://github.com/user-attachments/assets/0ea5b808-5668-4125-974a-436a4cdf3b20" />
 
+## Vector Store and Embeddings
 
 #### What is a embedding
 An embedding is a specific kind of vector — it's a list of numbers that represents something (like text) in a way that captures its meaning.
@@ -46,6 +45,8 @@ The place where your documents' text is stored,their vector embeddings are saved
 2. Equal weightage to whole sentence
     - Let's say we input a search query (Get me details about regression from lecture 3), this will focus equally on regression and lecture 3 thus this query will return documents containing info related to regression even if they are on documents other than lecture 3.
 
+
+## Retrieval
 
 ### Type of Retrieval:
 #### 1. Similarity Search
@@ -102,6 +103,20 @@ SVMRetriever is a machine learning-based retriever that uses SVM (Support Vector
     - It learns a decision boundary using your question and the document embeddings.
 - More flexible than TF-IDF because it uses semantic meaning (via embeddings).
 - Can find relevant documents even if they don’t share exact words with the query.
+
+## Question Answering
+
+#### Types of Chain Types (Check readme-secondary for details)
+
+The prompt is passed to the LLM model with relevant document splits and context in a prompt.
+1. Stuff Documents ( All the documents are fed to LLM model)
+2. Map Reduce
+3. Refine
+4. Map Rerank
+
+#### 📌 What is RetrievalQA?
+
+`RetrievalQA` is a **built-in chain** in LangChain that allows you to ask questions based on external documents (like PDFs, web pages, or transcripts). It connects a **retriever** (that finds relevant information) with a **language model (LLM)** (that generates a coherent answer).
 
 
 # setup
