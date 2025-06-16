@@ -48,75 +48,60 @@ The place where your documents' text is stored,their vector embeddings are saved
 
 
 ### Type of Retrieval:
-1. Similarity Search
+#### 1. Similarity Search
     - Semantically similar search
-2. Maximum marginal relevance
+#### 2. Maximum marginal relevance
+<img width="726" alt="Screenshot 2025-06-15 at 1 00 06 PM" src="https://github.com/user-attachments/assets/b1f9cd77-6927-4e49-bea9-dd8f31ab5b7e" />
+
  - Maximum marginal relevance strives to achieve both relevance to the query and diversity among the results.
  - This can be used to avoid similar or matching data and provided more broader results.
-3. LLL Aided Retrieval
-    - Using something like Self query
-    - We can break the input in two parts as a question and filter, and apply a filter and then show result in that filtered docs.
-4. Compression Retrieval
-    - ContextualCompressionRetriever can be used (read below section)
-    - Another approach for improving the quality of retrieved docs is compression. Information most relevant to a query may be buried in a document with a lot of irrelevant text. 
-    - Passing that full document through your application can lead to more expensive LLM calls and poorer responses.
-    - Contextual compression is meant to fix this. 
+
+#### 3. LLL Aided Retrieval
+<img width="726" alt="Screenshot 2025-06-15 at 1 01 23 PM" src="https://github.com/user-attachments/assets/b7675e78-816a-43c8-b2ea-4481d59d60b7" />
+
+ - Using something like Self query
+ - We can break the input in two parts as a question and filter, and apply a filter and then show result in that filtered docs.
+
+#### 4. Compression Retrieval
+
+<img width="726" alt="Screenshot 2025-06-16 at 3 24 47 AM" src="https://github.com/user-attachments/assets/f186e22e-a11f-40a9-8359-6888dfd7f6a0" />
+
+ - ContextualCompressionRetriever can be used (read below section)
+ - Another approach for improving the quality of retrieved docs is compression. Information most relevant to a query may be buried in a document with a lot of irrelevant text. 
+ - Passing that full document through your application can lead to more expensive LLM calls and poorer responses.
+ - Contextual compression is meant to fix this.   
 
 
-- ContextualCompressionRetriever
+#### ContextualCompressionRetriever
     - Most retrievers (like Chroma, FAISS, etc.) return entire chunks (e.g., full paragraphs) that match the query vector-wise. 
     - But these chunks can: Be large. Contain lots of irrelevant fluff. Overflow context windows.
     - So, ContextualCompressionRetriever solves this by: Running a compression chain (usually a language model) on retrieved docs. Keeping only the parts that are highly relevant to your query. 
 
 
 #### TFIDFRetriever (Term Frequency–Inverse Document Frequency)
-What it does:
-
-Uses a classic bag-of-words approach.
-
-Calculates how important a word is in a document relative to a corpus.
-
-Ranks documents based on term overlap with the query.
-
-Pros:
-
-Fast and easy to use.
-
-No need for embeddings or training.
-
-Transparent: you can see exactly why a document was chosen.
-
-Cons:
-
-Purely based on exact text match, so no semantic understanding.
-
-Sensitive to vocabulary mismatch (e.g., "car" vs "automobile").
-
-Best use case:
-
-Simple keyword-based search.
-
-Lightweight apps or small datasets
-
+- What it does:
+    - Uses a classic bag-of-words approach. Calculates how important a word is in a document relative to a corpus.
+    - Ranks documents based on term overlap with the query.
+    - Pros:
+        - Fast and easy to use.
+        - No need for embeddings or training.
+        - Transparent: you can see exactly why a document was chosen.
+    - Cons:
+        - Purely based on exact text match, so no semantic understanding.
+        - Sensitive to vocabulary mismatch (e.g., "car" vs "automobile").
+        - Best use case:
+            - Simple keyword-based search or Lightweight apps or small datasets
 
 
 #### What is SVMRetriever?
 SVMRetriever is a machine learning-based retriever that uses SVM (Support Vector Machine) to classify which documents are most relevant to your question.
 
-Think of it like this:
-
-You give it a bunch of documents (converted to embeddings = numerical representations of meaning).
-
-It treats your query like a "positive example", and tries to classify which documents are "like the query" using an SVM.
-
-The most similar ones (based on vector distance and classification confidence) are returned.
-
-🧠 Why is it useful?
-It learns a decision boundary using your question and the document embeddings.
-
-More flexible than TF-IDF because it uses semantic meaning (via embeddings).
-
-Can find relevant documents even if they don’t share exact words with the query.
+- Think of it like this:
+    - You give it a bunch of documents (converted to embeddings = numerical representations of meaning). It treats your query like a "positive example", and tries to classify which documents are "like the query" using an SVM. The most similar ones (based on vector distance and classification confidence) are returned.
+- Why is it useful?
+    - It learns a decision boundary using your question and the document embeddings.
+- More flexible than TF-IDF because it uses semantic meaning (via embeddings).
+- Can find relevant documents even if they don’t share exact words with the query.
 
 
 # setup
