@@ -106,6 +106,14 @@ SVMRetriever is a machine learning-based retriever that uses SVM (Support Vector
 
 ## Question Answering
 
+<img width="804" alt="Screenshot 2025-06-16 at 11 24 00 AM" src="https://github.com/user-attachments/assets/991c73e1-091c-42e3-a720-90d77f549886" />
+
+#### 📌 What is RetrievalQA?
+
+`RetrievalQA` is a **built-in chain** in LangChain that allows you to ask questions based on external documents (like PDFs, web pages, or transcripts). It connects a **retriever** (that finds relevant information) with a **language model (LLM)** (that generates a coherent answer).
+
+<img width="766" alt="Screenshot 2025-06-16 at 11 25 01 AM" src="https://github.com/user-attachments/assets/0b621f55-3e43-46fc-8fe5-b0d4a69f9501" />
+
 #### Types of Chain Types (Check readme-secondary for details)
 
 The prompt is passed to the LLM model with relevant document splits and context in a prompt.
@@ -114,9 +122,9 @@ The prompt is passed to the LLM model with relevant document splits and context 
 3. Refine
 4. Map Rerank
 
-#### 📌 What is RetrievalQA?
+<img width="766" alt="Screenshot 2025-06-16 at 8 12 32 PM" src="https://github.com/user-attachments/assets/856f78f7-5cbc-44ed-a177-b66da926782d" />
 
-`RetrievalQA` is a **built-in chain** in LangChain that allows you to ask questions based on external documents (like PDFs, web pages, or transcripts). It connects a **retriever** (that finds relevant information) with a **language model (LLM)** (that generates a coherent answer).
+
 
 
 # setup
