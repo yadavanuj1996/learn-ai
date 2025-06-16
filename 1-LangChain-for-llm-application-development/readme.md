@@ -25,13 +25,98 @@ It's an approach used in AI systems—especially with LLMs (Large Language Model
 <img width="723" alt="Screenshot 2025-06-15 at 12 32 51 PM" src="https://github.com/user-attachments/assets/0ea5b808-5668-4125-974a-436a4cdf3b20" />
 
 
+#### What is a embedding
+An embedding is a specific kind of vector — it's a list of numbers that represents something (like text) in a way that captures its meaning.
+
+#### What is a "collection" in Chroma?
+In this context, collection refers to the internal group of vectors (embeddings) stored in your Chroma vector database.
+
+Think of a collection like a table in a relational database or a collection in MongoDB. It's:
+
+A named logical group of documents (or chunks) + their embeddings. Backed by persistent storage (if you use persist_directory).
+
+The place where your documents' text is stored,their vector embeddings are saved, and associated metadata is kept.
+
+
 ### Failure Modes:
 1. Duplicate data in multiple documents
     - Le's say if we input two same documents in input, so after splitting and embedding it gets stored in vector db.
     - Once we retrieve a relevant document by similarity of the vector embeddings between input query and stored document splits
     - If there are duplicate input documents same content will be pulled back, ideally we would want syntactically closer and distinct document splits (so that we can pass it to LLM)
 2. Equal weightage to whole sentence
-    - Let's say we input a search query (Get me details about regression from document 3), this will focus equally on regression and document 3 thus this query will return documents containing info related to regression even if they are on documents other than document 3.
+    - Let's say we input a search query (Get me details about regression from lecture 3), this will focus equally on regression and lecture 3 thus this query will return documents containing info related to regression even if they are on documents other than lecture 3.
+
+
+### Type of Retrieval:
+1. Similarity Search
+    - Semantically similar search
+2. Maximum marginal relevance
+ - Maximum marginal relevance strives to achieve both relevance to the query and diversity among the results.
+ - This can be used to avoid similar or matching data and provided more broader results.
+3. LLL Aided Retrieval
+    - Using something like Self query
+    - We can break the input in two parts as a question and filter, and apply a filter and then show result in that filtered docs.
+4. Compression Retrieval
+    - ContextualCompressionRetriever can be used (read below section)
+    - Another approach for improving the quality of retrieved docs is compression. Information most relevant to a query may be buried in a document with a lot of irrelevant text. 
+    - Passing that full document through your application can lead to more expensive LLM calls and poorer responses.
+    - Contextual compression is meant to fix this. 
+
+
+- ContextualCompressionRetriever
+    - Most retrievers (like Chroma, FAISS, etc.) return entire chunks (e.g., full paragraphs) that match the query vector-wise. 
+    - But these chunks can: Be large. Contain lots of irrelevant fluff. Overflow context windows.
+    - So, ContextualCompressionRetriever solves this by: Running a compression chain (usually a language model) on retrieved docs. Keeping only the parts that are highly relevant to your query. 
+
+
+#### TFIDFRetriever (Term Frequency–Inverse Document Frequency)
+What it does:
+
+Uses a classic bag-of-words approach.
+
+Calculates how important a word is in a document relative to a corpus.
+
+Ranks documents based on term overlap with the query.
+
+Pros:
+
+Fast and easy to use.
+
+No need for embeddings or training.
+
+Transparent: you can see exactly why a document was chosen.
+
+Cons:
+
+Purely based on exact text match, so no semantic understanding.
+
+Sensitive to vocabulary mismatch (e.g., "car" vs "automobile").
+
+Best use case:
+
+Simple keyword-based search.
+
+Lightweight apps or small datasets
+
+
+
+#### What is SVMRetriever?
+SVMRetriever is a machine learning-based retriever that uses SVM (Support Vector Machine) to classify which documents are most relevant to your question.
+
+Think of it like this:
+
+You give it a bunch of documents (converted to embeddings = numerical representations of meaning).
+
+It treats your query like a "positive example", and tries to classify which documents are "like the query" using an SVM.
+
+The most similar ones (based on vector distance and classification confidence) are returned.
+
+🧠 Why is it useful?
+It learns a decision boundary using your question and the document embeddings.
+
+More flexible than TF-IDF because it uses semantic meaning (via embeddings).
+
+Can find relevant documents even if they don’t share exact words with the query.
 
 
 # setup
