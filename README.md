@@ -82,3 +82,9 @@ Want to collaborate, discuss startup ideas, or explore business models in AI?
 [DM me on LinkedIn](#) or open an issue on this repo.
 
 Let’s build the future with AI 🚀
+
+
+### Other Ideas that you can work on
+- Resume Chatbot
+  - A simple application that takes pdfs of resumes as input, and on the basis of documents a HR user can ask questions and shortlist suitable candidates.
+  - The user can ask about qualifications, projects, experience etc. 
