@@ -124,6 +124,10 @@ The prompt is passed to the LLM model with relevant document splits and context 
 
 <img width="766" alt="Screenshot 2025-06-16 at 8 12 32 PM" src="https://github.com/user-attachments/assets/856f78f7-5cbc-44ed-a177-b66da926782d" />
 
+## Chatbot
+
+<img width="770" alt="Screenshot 2025-06-17 at 2 00 38 AM" src="https://github.com/user-attachments/assets/6a3d5353-5965-41b3-87a9-28e5c9cd549a" />
+<img width="770" alt="Screenshot 2025-06-17 at 2 00 23 AM" src="https://github.com/user-attachments/assets/dd25a1c5-03d2-4e78-ba29-fcb799e935dc" />
 
 
 
