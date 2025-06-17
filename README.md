@@ -23,14 +23,39 @@ Welcome to my learning journey as I transition from a senior software engineer t
 
 ---
 
-## ⚙️ Phase 2: Build & Deploy Real Generative AI Projects (Weeks 2–3)
+## 🧠 Phase 2: LLM Project Engineering with Custom Builds
 
-### 🛠️ Practical, full-stack GenAI apps
-- [ ] [Hands-on Generative AI Engineering (Udemy)](https://www.udemy.com/course/hands-on-generative-ai-engineering-with-large-language-model/)
-  - [ ] Clone BabyGPT or BabyAGI (LLM with tools + memory)
-  - [ ] Build a RAG search assistant with your own data
-  - [ ] Deploy an LLM API (FastAPI + Streamlit or Gradio)
+**Primary Course:**  
+- [ ] [LLM Engineering: Master AI, Large Language Models & Agents (Udemy)](https://www.udemy.com/course/llm-engineering-master-ai-large-language-models-agents/)  
+⏱️ Estimated Time: 3–5 weeks | 💰 ~5–10 USD API usage | 🛠️ Project-First + Deployment Focus
 
+---
+
+### ✅ Core Skills Covered
+- LangChain (Chains, Memory, Agents, Tools)
+- RAG (Retrieval Augmented Generation)
+- OpenAI & Open-Source LLMs
+- Tool Calling / Agents
+- LoRA Fine-Tuning
+- Deployment via FastAPI or Streamlit
+- Building full-stack LLM-powered applications
+
+---
+
+### 🚀 My Custom Project Checklist
+
+| ✅ | Project | Description |
+|----|---------|-------------|
+| [ ] | **Personalized Fitness Plan Generator** | Replace brochure generator: uses LLM to recommend daily/weekly workouts and diet based on goals. |
+| [ ] | **Fitness Content Summarizer** | Replace meeting summarizer: summarize YouTube fitness podcasts/transcripts into action plans. |
+| [ ] | **Dev Tool AI Assistant** | Replace customer support bot: lets users ask questions about CI/CD or GitHub repo setup. |
+| [ ] | **Code Converter & Explainer** | Replace code translation agent: converts Bash ↔ PowerShell, explains Docker commands, etc. |
+| [ ] | **RAG over Personal Docs (Fitness/Dev)** | Replace document Q&A assistant: ask questions over your fitness tracking logs or project docs. |
+| [ ] | **Fine-Tuned Fitness Coach** | Replace LoRA fine-tuner: use LoRA to tune open-source model on fitness Reddit threads or gym logs. |
+| [ ] | **Smart Agent (Fitness or SaaS Taskbot)** | Replace BabyAGI/BabyGPT: agent automates task chaining (e.g., planning workout & logging it). |
+| [ ] | **Deploy AI Tool (FastAPI preferred)** | Replace generic app deploy: build and deploy one of above tools as a shareable product. |
+
+---
 ---
 
 ## 🚀 Phase 3: Product & Startup Acceleration Track (Weeks 4+)
