@@ -17,7 +17,7 @@ Welcome to my learning journey as I transition from a senior software engineer t
 ## 📍 Phase 1: Launch Fast with AI Foundations (Week 1)
 
 ### 🧪 Build an LLM-powered app in under 2 hours
-- [ ] [LangChain + OpenAI: Chat with Your Data](https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/)
+- [x] [LangChain + OpenAI: Chat with Your Data](https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/)
   - Learn how to create a chatbot that answers questions from your own docs using OpenAI + LangChain
   - Outcome: ✅ RAG (Retrieval-Augmented Generation) MVP
 
