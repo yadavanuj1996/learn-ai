@@ -24,11 +24,16 @@ MCP acts as a median between the LLM and all the tool providers and for any tool
 - MCP Client
 - MCP Server
 
-Internally in MCP host can create MCP clients to interact with different different tools or service providers.  This MCP client will be interacting with MCP server.
+Internally in MCP host can create MCP clients to interact with different different tools or service providers. 
+**This MCP client will be interacting with MCP server (using MCP protocol).**
 
 - MCP host can be a vscode ide or claude desktop. Also it can be a application created using streamlit or fast api.
   - Streamlit can act as the MCP Host App where both the interface and the MCP logic run (Stremlit provides a frontend interactive chat UI.)
   - FastAPI is best when you want to decouple the frontend (e.g., React) and expose your MCP loop as an API
 
+We can connect MCP client with multiple MCP servers and these MCP server can be connected to different tools & services. In the diagram above if you see one MCP server is connected to Code repo, another is connected to db while one is connect to some APIs.
 
-<img width="1285" alt="Screenshot 2025-07-05 at 1 24 18 AM" src="https://github.com/user-attachments/assets/80deb862-b459-43f7-8f99-e837d4a44177" />
+Note: If any changes in tool providers will be done we don't have to make any changes (no extra code change need on our side) it's tool providers responsibility to keep thier tool or service providers adhered to MCP protocol.
+
+
+- The MCP server will also be provided by service providers, ex:- if zerodha exposes it's MCP server and we connect zerodha MCP server using our MCP client, the responsibility of manageing MCP server in this case will lie with zerodha and any udpate that needs to be made will be made by zerodha and we don't have to make any change in our code.
