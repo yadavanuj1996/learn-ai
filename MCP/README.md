@@ -31,7 +31,8 @@ Internally in MCP host can create MCP clients to interact with different differe
   - Streamlit can act as the MCP Host App where both the interface and the MCP logic run (Stremlit provides a frontend interactive chat UI.)
   - FastAPI is best when you want to decouple the frontend (e.g., React) and expose your MCP loop as an API
 
-We can connect MCP client with multiple MCP servers and these MCP server can be connected to different tools & services. In the diagram above if you see one MCP server is connected to Code repo, another is connected to db while one is connect to some APIs.
+- We can connect MCP client with multiple MCP servers and these MCP server can be connected to different tools & services. In the diagram above if you see one MCP server is connected to Code repo, another is connected to db while one is connect to some APIs.
+  - In the above example each MCP server is connected to only one service/ tool but there is no constraint **each MCP server can be connected to multiple services/tools.**
 
 Note: If any changes in tool providers will be done we don't have to make any changes (no extra code change need on our side as we are manageing mcp host on out side that does not need any code change) it's tool providers responsibility to keep thier tool or service providers adhered to MCP protocol.
 
