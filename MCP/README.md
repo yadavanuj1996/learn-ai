@@ -9,6 +9,26 @@ Note: One example of tool can also be a search that add a tool that enables LLM 
 ### Current challenge
 If we want to do have 100 such tools attach to our LLM, we need to write custom for each of them and then maintain the code and deal with all the changes with the integrations (like version upgrades of libraries or breaking changes made by tool providers fora particular tool etc)
 
+### How MCP solves it
 <img width="930" alt="Screenshot 2025-07-04 at 11 21 10 PM" src="https://github.com/user-attachments/assets/163dec8d-5650-43a3-b92a-a3c3fde358e8" />
 
 MCP acts as a median between the LLM and all the tool providers and for any tool provider that want to make a tool that works on MCP protocol needs to adhere all the rules and guidelines defined in MCP. (even in official the docs of MCP it is mentioned that this is like a USB C port and can connect to any number and type of tools.)
+
+
+### MCP Components
+
+<img width="1285" alt="Screenshot 2025-07-05 at 1 24 18 AM" src="https://github.com/user-attachments/assets/80deb862-b459-43f7-8f99-e837d4a44177" />
+
+3 Major components
+- MCP Host
+- MCP Client
+- MCP Server
+
+Internally in MCP host can create MCP clients to interact with different different tools or service providers.  This MCP client will be interacting with MCP server.
+
+- MCP host can be a vscode ide or claude desktop. Also it can be a application created using streamlit or fast api.
+  - Streamlit can act as the MCP Host App where both the interface and the MCP logic run (Stremlit provides a frontend interactive chat UI.)
+  - FastAPI is best when you want to decouple the frontend (e.g., React) and expose your MCP loop as an API
+
+
+<img width="1285" alt="Screenshot 2025-07-05 at 1 24 18 AM" src="https://github.com/user-attachments/assets/80deb862-b459-43f7-8f99-e837d4a44177" />
