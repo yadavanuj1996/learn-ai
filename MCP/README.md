@@ -37,3 +37,15 @@ Note: If any changes in tool providers will be done we don't have to make any ch
 
 
 - The MCP server will also be provided by service providers, ex:- if zerodha exposes it's MCP server and we connect zerodha MCP server using our MCP client, the responsibility of manageing MCP server in this case will lie with zerodha and any udpate that needs to be made will be made by zerodha and we don't have to make any change in our code.
+
+
+## Communication between these components
+
+<img width="1281" alt="Screenshot 2025-07-05 at 2 02 14 AM" src="https://github.com/user-attachments/assets/87f68a0b-f264-4199-b86c-7cd547abbee7" />
+
+1. MCP host will first find out on the basis of input provided and go and hit MCP servers and MCP server will return all the toold and service providers available with it.
+2. MCP host will hit the LLM with input question and all tools available in MCP server.
+3. LLM will provide response which tool to use (of all the list of tools provided). Let's say LLM responds to MCP hostto use a particular DB tool.
+4. The MCP Host will along with input question and the tool it will hit the specific tool through the MCP server. (In this case after hitting the particular db tool the reponse will be sent back to MCP Host)
+5. The **Context** will be sent to the LLM and we get the final output.
+
