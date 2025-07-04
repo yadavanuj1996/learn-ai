@@ -12,7 +12,7 @@ If we want to do have 100 such tools attach to our LLM, we need to write custom 
 ### How MCP solves it
 <img width="930" alt="Screenshot 2025-07-04 at 11 21 10 PM" src="https://github.com/user-attachments/assets/163dec8d-5650-43a3-b92a-a3c3fde358e8" />
 
-MCP acts as a median between the LLM and all the tool providers and for any tool provider that want to make a tool that works on MCP protocol needs to adhere all the rules and guidelines defined in MCP. (even in official the docs of MCP it is mentioned that this is like a USB C port and can connect to any number and type of tools.)
+MCP acts as a median between the LLM and all the tool providers and for any tool provider that want to make a tool that works on MCP protocol needs to adhere all the rules and guidelines defined in MCP. (even in official docs of MCP it is mentioned that this is like a USB C port and can connect to any number and type of tools.)
 
 
 ### MCP Components
@@ -33,10 +33,10 @@ Internally in MCP host can create MCP clients to interact with different differe
 
 We can connect MCP client with multiple MCP servers and these MCP server can be connected to different tools & services. In the diagram above if you see one MCP server is connected to Code repo, another is connected to db while one is connect to some APIs.
 
-Note: If any changes in tool providers will be done we don't have to make any changes (no extra code change need on our side) it's tool providers responsibility to keep thier tool or service providers adhered to MCP protocol.
+Note: If any changes in tool providers will be done we don't have to make any changes (no extra code change need on our side as we are manageing mcp host on out side that does not need any code change) it's tool providers responsibility to keep thier tool or service providers adhered to MCP protocol.
 
 
-- The MCP server will also be provided by service providers, ex:- if zerodha exposes it's MCP server and we connect zerodha MCP server using our MCP client, the responsibility of manageing MCP server in this case will lie with zerodha and any udpate that needs to be made will be made by zerodha and we don't have to make any change in our code.
+- **The MCP server will also be provided by service providers**, ex:- if zerodha exposes it's MCP server and we connect zerodha MCP server using our MCP client, the responsibility of manageing MCP server in this case will lie with zerodha and any udpate that needs to be made will be made by zerodha and we don't have to make any change in our code.
 
 
 ## Communication between these components
