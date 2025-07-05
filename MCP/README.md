@@ -1,3 +1,5 @@
+### Definition
+Model Context Protocol (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. Its aim is to help frontier models produce better, more relevant responses.
 
 ### History and what we know
 <img width="1302" alt="Screenshot 2025-07-04 at 11 06 55 PM" src="https://github.com/user-attachments/assets/51f96d46-382a-41a7-81e9-5d4563365f7f" />
