@@ -72,4 +72,20 @@ OpenAI's function calling works seamlessly with MCP tools through the following 
 ## ✅ Example Use Case
 
 Ask OpenAI something like:
+"What is the company's remote work policy?"
+
+
+OpenAI will:
+
+1. Select the `get_knowledge_base` tool
+2. Query the MCP server
+3. Use the result to generate a detailed and accurate answer
+
+---
+
+## 📎 Notes
+
+- This integration serves as a reference architecture for building **RAG-style LLM systems** using MCP and OpenAI.
+- You can extend this project by adding more tools, datasets, or even switching transport methods (`stdio` → `http`, `websocket`, etc.).
+
 
