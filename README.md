@@ -23,6 +23,17 @@ Welcome to my learning journey as I transition from a senior software engineer t
 
 ---
 
+## 🧩 Phase 1.5: MCP Crash Course & Mini Project
+
+### 📺 MCP Crash Course for Python Developers – *Dave Ebbelaar (YouTube)*
+- [x] Completed: Built and dockerized a full MCP workflow (Server + FastAPI Client)
+- [x] Project: **MCP-Powered Math Calculator**
+  - Created a custom MCP Server that exposes a simple calculator tool
+  - Built a Python-based FastAPI client that calls the MCP server
+  - Ran MCP server with Docker containers and called it from my local client using http-streamable for isolated local testing.
+- Outcome: ✅ Understood MCP architecture (tools/resources), Docker-based service design, and FastAPI integration
+---
+
 ## 🧠 Phase 2: LLM Project Engineering with Custom Builds
 
 **Primary Course:**  
@@ -55,7 +66,6 @@ Welcome to my learning journey as I transition from a senior software engineer t
 | [ ] | **Smart Agent (Fitness or SaaS Taskbot)** | Replace BabyAGI/BabyGPT: agent automates task chaining (e.g., planning workout & logging it). |
 | [ ] | **Deploy AI Tool (FastAPI preferred)** | Replace generic app deploy: build and deploy one of above tools as a shareable product. |
 
----
 ---
 
 ## 🚀 Phase 3: Product & Startup Acceleration Track (Weeks 4+)
@@ -108,6 +118,7 @@ Want to collaborate, discuss startup ideas, or explore business models in AI?
 
 Let’s build the future with AI 🚀
 
+---
 
 ### Other Ideas that you can work on
 - Resume Chatbot
