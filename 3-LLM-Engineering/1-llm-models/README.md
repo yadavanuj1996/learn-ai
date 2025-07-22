@@ -23,3 +23,6 @@
 
 **Key takeaway**:  
 The context window controls how much input history an LLM can consider for output — a vital factor for maintaining coherent, long conversations or handling large texts.
+
+- One-shot prompting provides the model with a single example before asking it to perform a similar task.
+- Multi-shot prompting gives the model multiple examples to better guide its behavior before issuing the final instruction.
