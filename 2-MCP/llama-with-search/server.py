@@ -1,23 +1,31 @@
+import os
+import requests
 from mcp.server.fastmcp import FastMCP
 from dotenv import load_dotenv
+from openai import OpenAI
+from duckduckgo_search import DDGS
 
-load_dotenv("../../.env")
 
-# Create an MCP server
+# crete mcp server
+
 mcp = FastMCP(
-    name="Calculator",
-    host="0.0.0.0",  # only used for SSE transport
-    port=8050,  # only used for SSE transport (set this to any port)
+    name="LLM + Search",
+    host="0.0.0.0",
+    port=8050,  
 )
 
-
-# Add a simple calculator tool
 @mcp.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers together"""
-    return a + b
-
-
+def search(query: str) -> str:
+    """Search the DuckDuckGo knowledge base for the given query.
+    Args:
+        query: The search query.
+    Returns:
+        A list of search results (top 3).
+    """
+    with DDGS() as ddgs:
+        results = ddgs.text(query, max_results=3)
+        return [{"title": r['title'], "url": r['href']} for r in results]
+    
 # Run the server
 if __name__ == "__main__":
     transport = "streamable-http"
