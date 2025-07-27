@@ -1,3 +1,6 @@
 notebook
 dotenv
 openai
+anthropic
+google-generativeai
+gradio
