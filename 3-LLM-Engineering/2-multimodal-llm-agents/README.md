@@ -46,3 +46,5 @@ Tools are **external functions** (e.g., calculator, API, database) that LLMs can
 3. **Performing Calculations** – since LLMs aren't good at math natively.
 4. **Modifying the UI** – e.g., changing the frontend via tool-triggered actions.
 
+
+- We have created a multi modal ai assistant of flight chat agent in module 5 here that can talk to you in english and show images of destination city.
