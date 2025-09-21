@@ -56,4 +56,3 @@ langchain.log
 docs/youtube/
 outputs/
 **/docs/
-*.mp3
