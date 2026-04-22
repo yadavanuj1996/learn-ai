@@ -27,6 +27,15 @@ venv/
 .env.*
 
 # ----------------------------
+# Google OAuth / Credentials
+# ----------------------------
+credentials.json
+token.json
+.gauth.json
+.accounts.json
+.oauth2.*.json
+
+# ----------------------------
 # VSCode / PyCharm / IDEs
 # ----------------------------
 .vscode/
